@@ -5,39 +5,39 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Speedy Luigi's</title>
+    <title>Phone Home Pizza</title>
   </head>
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Speedy Luigi's Pizzeria</h1>
-        <h4>Fresh hot vegan pizza delivered to your doorstep at the speed of light!</h4>
+        <h1>PHONE HOME PIZZERIA</h1>
+        <h4>Out of this world vegan pizza delivery service...delivered straight to your stomach at the speed of light! You won't even know you ate it!</h4>
       </div>
       <form id="order">
         <div class="well">
-          <p>Pick your SIZE:</p>
+          <p>On a scale of Pluto to Jupiter, how hungry are you?</p>
           <div class="radio">
             <label>
               <input type="radio" name="size" value="large" checked>
-              Gotta feed a football stadium
+              JUPITER (Large)<i>. . . .starting at $20.00</i>
             </label>
           </div>
           <div class="radio">
             <label>
               <input type="radio" name="size" value="medium">
-              Just me and a friend or two
+              EARTH (Medium) <i>. . . .starting at $12.00</i>
             </label>
           </div>
           <div class="radio">
             <label>
               <input type="radio" name="size" value="small">
-              It's a personal thing
+              PLUTO (Small) <i>. . . .starting at $6.00</i>
             </label>
           </div>
         </div>
 
         <div class="well">
-          <p>Pick your CRUST:</p>
+          <p>How do you like the rings on your planet? (okay, we're talking about crust here):</p>
           <div class="radio">
             <label>
               <input type="radio" name="crust" value="thick" checked>
@@ -50,6 +50,18 @@
               Thin and crispy
             </label>
           </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="crust" value="deep">
+              Deep Dish
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="crust" value="calzone">
+              Calzone
+            </label>
+          </div>
         </div>
 
         <div class="well">
@@ -57,13 +69,13 @@
           <div class="radio">
             <label>
               <input type="radio" name="sauce" value="traditional">
-              Traditional Red
+              Traditional Red Tomato and Herb
             </label>
           </div>
           <div class="radio">
             <label>
               <input type="radio" name="sauce" value="buffalo">
-              NY Buffalo
+              New York Buffalo
             </label>
           </div>
           <div class="radio">
@@ -78,32 +90,38 @@
               Sweet Smokey BBQ
             </label>
           </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="sauce" value="none">
+              No Sauce
+            </label>
+          </div>
         </div>
 
         <div class="well">
-          <p>Luigi's Vegan Mozzarella Cheese:</p>
+          <p>Vegan Mozzarella Cheez:</p>
           <div class="radio">
             <label>
-              <input type="radio" name="cheese" value="normal">
+              <input type="radio" name="cheez" value="extra">
+              Load me up! <i>. . . . $1.00 extra</i>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="cheez" value="normal">
               Just the normal amount please
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="cheese" value="extra">
-              Load me up!
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="cheese" value="none">
-              No thanks!
+              <input type="radio" name="cheez" value="no">
+              No Cheez
             </label>
           </div>
         </div>
 
         <div class="well">
-          <p>Load it up with Luigi's Vegan Meats:<br>($2.00 each)</p>
+          <p>Load it up with Luigi's Vegan Meatz:<br>($2.00 each)</p>
           <input type="checkbox" name="meat" value="pepperoni">Pepperoni<br>
           <input type="checkbox" name="meat" value="chicken">Chicken<br>
           <input type="checkbox" name="meat" value="sausage">Italian Sausage<br>
@@ -113,10 +131,10 @@
 
         <div class="well">
           <p>Load it up with TOPPINGS:<br>($.50 each)</p>
-          <input type="checkbox" name="top" value="tomatoes">Sliced Tomatoes<br>
+          <input type="checkbox" name="top" value="tomatoes">Fresh Tomatoes<br>
           <input type="checkbox" name="top" value="olives">Black Olives<br>
           <input type="checkbox" name="top" value="peppers">Green Peppers<br>
-          <input type="checkbox" name="top" value="jalapeno">Jalapeno Peppers<br>
+          <input type="checkbox" name="top" value="jalapeno">Jalapeño Peppers<br>
           <input type="checkbox" name="top" value="mushrooms">Mushrooms<br>
           <input type="checkbox" name="top" value="onion">Red Onions<br>
           <input type="checkbox" name="top" value="pineapple">Pineapple<br>
@@ -142,9 +160,12 @@
         </div>
         <button type="submit" class="btn btn-success">Submit Order</button>
       </form>
-        <ul id="orders">
-        </ul>
-      <h1 id="receipt"></h1>
+      <div class="receipt">
+        <img src="img/pizza.jpg">
+        <p id="receipt-name"></p>
+        <p id="receipt-orders"></p>
+        <h1 id="receipt-total"></h1>
+      </div>
     </div>
   </body>
 </html>
