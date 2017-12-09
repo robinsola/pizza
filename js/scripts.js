@@ -1,20 +1,27 @@
 // business logic
+function Customer(name, credit, address) {
+  this.name = name;
+  this.credit = credit;
+  this.address = address;
+  this.pizzas = [];
+}
 
-function Pizza(size, crust, cheese, meats, toppings, total) {
+function Pizza(size, crust, cheese, meats, toppings) {
   this.size = size;
   this.crust = crust;
   this.cheese = cheese;
   this.meats = meats;
   this.toppings = toppings;
-  this.total = total;
-  this.customer = [];
 }
 
-function Customer(name, credit, address) {
-  this.name = name;
-  this.credit = credit;
-  this.address = address;
+Customer.prototype.info = function() {
+  return this.name;
 }
+
+Pizza.prototype.listOrder = function() {
+  return this.size + " " + this.crust + " crust " + this.cheese + " cheese " + this.meats.length + " meats and " + this.toppings.length + " toppings";
+}
+
 
 Pizza.prototype.cost = function() {
   var crustCost = 0;
@@ -35,12 +42,13 @@ Pizza.prototype.cost = function() {
 };
 
 
-// user logic
+// user logic -----------------------------------------------------
 $(document).ready(function() {
 
   $("form#order").submit(function(event) {
     event.preventDefault();
 
+    // user input variables for Pizza Object
     var inputSize = $("input:radio[name=size]:checked").val();
     var inputCrust = $("input:radio[name=crust]:checked").val();
     var inputCheese = $("input:radio[name=cheese]:checked").val();
@@ -55,8 +63,17 @@ $(document).ready(function() {
       inputToppings.push(toppingsChecked);
     });
 
+    // user input values for Customer Object
+    var inputName = $("#name").val();
+    var inputCredit = $("#credit").val();
+    var inputAddress = $("#address").val();
+
     var newPizza = new Pizza(inputSize, inputCrust, inputCheese, inputMeats, inputToppings);
 
-    $("#receipt").text(newPizza.cost());
+    var newCustomer = new Customer(inputName, inputCredit, inputAddress);
+
+    // $("#orders").append("<li><span class='pizza-ordered'>" + "Thank you for your order, " + newCustomer.info() + "</span></li>");
+    $("#orders").append("<li><span class='pizza-ordered'>" + newPizza.listOrder() + "</span></li>");
+    $("#receipt").text("Total: $" + newPizza.cost());
   });
 });
