@@ -1,10 +1,42 @@
+body.hide-bg {
+  background-image: url("../img/alienbabe.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: auto 750px;
+}
 body {
     background-image: url("../img/pizzaplanet.jpg");
+    color: white;
     /*background-repeat: repeat-x;*/
+}
+
+p {
+  color: white;
+}
+
+.btn {
+  background-color: #2374AB;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.btn:hover {
+  color: white;
+  background-color: #ED1C24;
+  font-weight: bold;
 }
 
 .receipt {
   display: none;
+  color: #403F4C;
+  border: 3px solid white;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 20px;
+  float: left;
+  background-color: #F1D302;
 }
 
 .jumbotron {
@@ -12,4 +44,10 @@ body {
   color: white;
   font-family: helvetica;
   text-align: center;
+}
+
+.well {
+  margin: 40px;
+  /*background-color: #F1D302;*/
+  background-color: #2374AB;
 }

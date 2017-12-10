@@ -6,9 +6,10 @@ function Customer(name, credit, address) {
   this.pizzas = [];
 }
 
-function Pizza(size, crust, cheez, meats, toppings) {
+function Pizza(size, crust, sauce, cheez, meats, toppings) {
   this.size = size;
   this.crust = crust;
+  this.sauce = sauce;
   this.cheez = cheez;
   this.meats = meats;
   this.toppings = toppings;
@@ -19,7 +20,7 @@ Customer.prototype.info = function() {
 }
 
 Pizza.prototype.listOrder = function() {
-  return this.size + " " + this.crust + " crust, " + this.cheez + " cheez, " + this.meats.length + " meats, and " + this.toppings.length + " toppings";
+  return this.size + " " + this.crust + " crust, " + this.cheez + " cheez, " + this.meats.length + " meatz, and " + this.toppings.length + " toppings";
 }
 
 
@@ -47,10 +48,12 @@ $(document).ready(function() {
 
   $("form#order").submit(function(event) {
     event.preventDefault();
+    $("body").removeClass("hide-bg");
 
     // user input variables for Pizza Object
     var inputSize = $("input:radio[name=size]:checked").val();
     var inputCrust = $("input:radio[name=crust]:checked").val();
+    var inputSauce = $("input:radio[name=sauce]:checked").val();
     var inputCheez = $("input:radio[name=cheez]:checked").val();
     var inputMeats = [];
     var inputToppings = [];
@@ -68,14 +71,20 @@ $(document).ready(function() {
     var inputCredit = $("#credit").val();
     var inputAddress = $("#address").val();
 
-    var newPizza = new Pizza(inputSize, inputCrust, inputCheez, inputMeats, inputToppings);
+    var newPizza = new Pizza(inputSize, inputCrust, inputSauce, inputCheez, inputMeats, inputToppings);
 
     var newCustomer = new Customer(inputName, inputCredit, inputAddress);
 
+    $(".jumbotron").hide();
     $("form#order").hide();
+    $("body").addClass("hide-bg");
     $(".receipt").fadeIn();
-    $("#receipt-name").text("Thank you for your order, " + newCustomer.info());
-    $("#receipt-orders").text(newPizza.listOrder());
+    $("#receipt-name").text(newCustomer.name);
+    // $("#receipt-orders").text(newPizza.listOrder());
+    $("#receipt-orders").append("<li>" + newPizza.size + " " + newPizza.crust + " crust" + "</li>")
+    $("#receipt-orders").append("<li>" + newPizza.sauce + " sauce and " + newPizza.cheez + " cheez" + "</li>")
+    $("#receipt-orders").append("<li>" + "Meatz: " + newPizza.meats + "</li>")
+    $("#receipt-orders").append("<li>" + "Toppings: " + newPizza.toppings + "</li>")
     $("#receipt-total").text("Total: $" + newPizza.cost());
   });
 });
