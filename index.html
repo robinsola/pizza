@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
@@ -10,8 +11,8 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>PHONE HOME PIZZERIA</h1>
-        <h4>Out of this world vegan pizza delivery service...delivered straight to your stomach at the speed of light! You won't even know you ate it!</h4>
+        <h1>Phone Home Pizzeria</h1>
+        <h2>Out of this world vegan pizza delivery service...delivered straight to your stomach at the speed of light! You won't even know you ate it!</h2>
       </div>
       <form id="order">
         <div class="row>">
@@ -119,55 +120,55 @@
               <div class="radio">
                 <label>
                   <input type="radio" name="cheez" value="no">
-                  No Cheez pleez (ummm . . . ok, fine, be that way.)
+                  No Cheez (ummm . . . ok, fine, be that way.)
                 </label>
               </div>
             </div>
 
             <div class="well">
-              <p>Load it up with some of our Soylent brand Vegan MEATZ:<br>($2.00 each)</p>
-              <input type="checkbox" name="meat" value="pepperoni">"Pepperoni"<br>
-              <input type="checkbox" name="meat" value="chicken">"Chicken"<br>
-              <input type="checkbox" name="meat" value="sausage">"Italian Sausage"<br>
-              <input type="checkbox" name="meat" value="ham">"Ham"<br>
-              <input type="checkbox" name="meat" value="steak">"Philly Steak"<br>
+              <p>Load it up with some of our Vegan MEATZ:<br>$2.00 each</p>
+              <input type="checkbox" name="meat" value="pepperoni"> "Pepperoni"<br>
+              <input type="checkbox" name="meat" value="chicken"> "Chicken"<br>
+              <input type="checkbox" name="meat" value="sausage"> "Italian Sausage"<br>
+              <input type="checkbox" name="meat" value="ham"> "Ham"<br>
+              <input type="checkbox" name="meat" value="steak"> "Philly Steak"<br>
             </div>
 
             <div class="well">
-              <p>Load it up with some cosmic TOPPINGS:<br>($.50 each)</p>
-              <input type="checkbox" name="top" value="tomatoes">Fresh Tomatoes<br>
-              <input type="checkbox" name="top" value="olives">Black Olives<br>
-              <input type="checkbox" name="top" value="peppers">Green Peppers<br>
-              <input type="checkbox" name="top" value="jalapeno">Jalapeño Peppers<br>
-              <input type="checkbox" name="top" value="mushrooms">Mushrooms<br>
-              <input type="checkbox" name="top" value="onion">Red Onions<br>
-              <input type="checkbox" name="top" value="pineapple">Pineapple<br>
-              <input type="checkbox" name="top" value="spinach">Spinach<br>
-              <input type="checkbox" name="top" value="broccoli">Broccoli<br>
+              <p>Load it up with some cosmic TOPPINGS:<br>$.50 each</p>
+              <input type="checkbox" name="top" value="tomatoes"> Fresh Tomatoes<br>
+              <input type="checkbox" name="top" value="olives"> Black Olives<br>
+              <input type="checkbox" name="top" value="peppers"> Green Peppers<br>
+              <input type="checkbox" name="top" value="jalapeno"> Jalapeño Peppers<br>
+              <input type="checkbox" name="top" value="mushrooms"> Mushrooms<br>
+              <input type="checkbox" name="top" value="onion"> Red Onions<br>
+              <input type="checkbox" name="top" value="pineapple"> Pineapple<br>
+              <input type="checkbox" name="top" value="spinach"> Spinach<br>
+              <input type="checkbox" name="top" value="broccoli"> Broccoli<br>
             </div>
           </div>
         </div>
+        <h1>Last Step!</h1>
         <div id="payment">
-          <h4>Last Step!</h4>
           <p>Tell us where to send your  intergalactic & awesome out-of-this-world vegan pizza:</p>
           <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" id="name" placeholder="Name for order">
           </div>
           <div class="form-group">
-            <label for="credit">Credit Card#:</label>
-            <input type="text" class="form-control" id="credit">
+            <label for="credit">Payment Info:</label>
+            <input type="text" class="form-control" id="credit" placeholder="Credit Card#">
           </div>
           <div class="form-group">
-            <label for="address">House/Apt# and Street:</label>
-            <input type="text" class="form-control" id="address">
+            <label for="address">Address:</label>
+            <input type="text" class="form-control" id="address" placeholder="House/Apt# and Street">
           </div>
         </div>
         <button type="submit" class="btn">Submit Order</button>
       </form>
       <div class="receipt">
-        <h2>Thanks <span id="receipt-name"></span>!</h2>
-        <h4>Guess what? We're already here! Come to the door and get your pizza already!</h4>
+        <h1>Thanks <span id="receipt-name"></span>!</h1>
+        <h4>Guess what? We're here! Come to the door and get your pizza already!</h4>
         <h6>Your Order:</h6>
         <ul id="receipt-orders">
 

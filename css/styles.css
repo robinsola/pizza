@@ -8,18 +8,27 @@ body.hide-bg {
 body {
     background-image: url("../img/pizzaplanet.jpg");
     color: white;
-    /*background-repeat: repeat-x;*/
 }
 
 p {
   color: white;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: Amatic SC;
+}
+
+button {
+  float: right;
 }
 
 .btn {
-  background-color: #2374AB;
+  background-color: #454ADE;
   color: white;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-right: 80px;
+  margin-bottom: 40px;
 }
 
 .btn:hover {
@@ -31,7 +40,7 @@ p {
 .receipt {
   display: none;
   color: #403F4C;
-  border: 3px solid white;
+  border: 3px solid #ED1C24;
   border-radius: 4px;
   margin: 10px;
   padding: 20px;
@@ -42,12 +51,27 @@ p {
 .jumbotron {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
-  font-family: helvetica;
+  font-family: Amatic SC;
   text-align: center;
 }
 
+.jumbotron h1 {
+  font-size: 120px;
+  text-shadow: 2px 2px #ff0000;
+}
+
 .well {
-  margin: 40px;
+  border: 2px solid #F1D302;
+  margin: 30px;
+  line-height: 25px;
   /*background-color: #F1D302;*/
-  background-color: #2374AB;
+  /*background-color: #2374AB;*/
+  background-color: #454ADE;
+}
+
+#payment {
+  padding: 15px;
+  margin: 40px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.5);
 }

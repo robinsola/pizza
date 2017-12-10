@@ -3,31 +3,21 @@ function Customer(name, credit, address) {
   this.name = name;
   this.credit = credit;
   this.address = address;
-  this.pizzas = [];
 }
 
-function Pizza(size, crust, sauce, cheez, meats, toppings) {
+function Pizza(size, crust, sauce, cheez, meatz, toppings) {
   this.size = size;
   this.crust = crust;
   this.sauce = sauce;
   this.cheez = cheez;
-  this.meats = meats;
+  this.meatz = meatz;
   this.toppings = toppings;
 }
-
-Customer.prototype.info = function() {
-  return this.name;
-}
-
-Pizza.prototype.listOrder = function() {
-  return this.size + " " + this.crust + " crust, " + this.cheez + " cheez, " + this.meats.length + " meatz, and " + this.toppings.length + " toppings";
-}
-
 
 Pizza.prototype.cost = function() {
   var crustCost = 0;
   var cheezCost = 0;
-  var meatsCost = this.meats.length * 2;
+  var meatzCost = this.meatz.length * 2;
   var toppingsCost = this.toppings.length * .50;
   if (this.size === "large") {
     crustCost += 20;
@@ -36,10 +26,10 @@ Pizza.prototype.cost = function() {
   } else if (this.size === "small") {
     crustCost += 6;
   }
-  if (this.cheese === "extra") {
+  if (this.cheez === "extra") {
     cheezCost += 1;
   }
-  return crustCost + cheezCost + meatsCost + toppingsCost;
+  return crustCost + cheezCost + meatzCost + toppingsCost;
 };
 
 
@@ -55,36 +45,35 @@ $(document).ready(function() {
     var inputCrust = $("input:radio[name=crust]:checked").val();
     var inputSauce = $("input:radio[name=sauce]:checked").val();
     var inputCheez = $("input:radio[name=cheez]:checked").val();
-    var inputMeats = [];
+    var inputMeatz = [];
     var inputToppings = [];
     $("input:checkbox[name=meat]:checked").each(function() {
-      var meatsChecked = $(this).val();
-      inputMeats.push(meatsChecked);
+      var meatzChecked = $(this).val();
+      inputMeatz.push(" " + meatzChecked);
     });
     $("input:checkbox[name=top]:checked").each(function() {
       var toppingsChecked = $(this).val();
-      inputToppings.push(toppingsChecked);
+      inputToppings.push(" " + toppingsChecked);
     });
 
-    // user input values for Customer Object
+    // user input variables for Customer Object
     var inputName = $("#name").val();
     var inputCredit = $("#credit").val();
     var inputAddress = $("#address").val();
 
-    var newPizza = new Pizza(inputSize, inputCrust, inputSauce, inputCheez, inputMeats, inputToppings);
+    var newPizza = new Pizza(inputSize, inputCrust, inputSauce, inputCheez, inputMeatz, inputToppings);
 
     var newCustomer = new Customer(inputName, inputCredit, inputAddress);
 
     $(".jumbotron").hide();
     $("form#order").hide();
     $("body").addClass("hide-bg");
-    $(".receipt").fadeIn();
+    $(".receipt").fadeIn(600);
     $("#receipt-name").text(newCustomer.name);
-    // $("#receipt-orders").text(newPizza.listOrder());
     $("#receipt-orders").append("<li>" + newPizza.size + " " + newPizza.crust + " crust" + "</li>")
     $("#receipt-orders").append("<li>" + newPizza.sauce + " sauce and " + newPizza.cheez + " cheez" + "</li>")
-    $("#receipt-orders").append("<li>" + "Meatz: " + newPizza.meats + "</li>")
+    $("#receipt-orders").append("<li>" + "Meatz: " + newPizza.meatz + "</li>")
     $("#receipt-orders").append("<li>" + "Toppings: " + newPizza.toppings + "</li>")
-    $("#receipt-total").text("Total: $" + newPizza.cost());
+    $("#receipt-total").text("Total: $" + newPizza.cost().toFixed(2));
   });
 });
