@@ -70,10 +70,10 @@ $(document).ready(function() {
     $("body").addClass("hide-bg");
     $(".receipt").fadeIn(600);
     $("#receipt-name").text(newCustomer.name);
-    $("#receipt-orders").append("<li>" + newPizza.size + " " + newPizza.crust + " crust" + "</li>")
-    $("#receipt-orders").append("<li>" + newPizza.sauce + " sauce and " + newPizza.cheez + " cheez" + "</li>")
-    $("#receipt-orders").append("<li>" + "Meatz: " + newPizza.meatz + "</li>")
-    $("#receipt-orders").append("<li>" + "Toppings: " + newPizza.toppings + "</li>")
+    $("#receipt-orders").append("<li>" + newPizza.size + " " + newPizza.crust + " crust" + "</li>");
+    $("#receipt-orders").append("<li>" + newPizza.sauce + " sauce and " + newPizza.cheez + " cheez" + "</li>");
+    $("#receipt-orders").append("<li>" + "Meatz: " + newPizza.meatz + "</li>");
+    $("#receipt-orders").append("<li>" + "Toppings: " + newPizza.toppings + "</li>");
     $("#receipt-total").text("Total: $" + newPizza.cost().toFixed(2));
   });
 });
